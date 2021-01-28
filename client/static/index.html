@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.A.R.V.I.S</title>
+
+    <!--LOCAL STYLESHEETS/SCRIPTS-->
+    <link rel="stylesheet" href="dist/style.css">
+    <script src="dist/script.js"></script>
+
+    <!--CDN IMPORTS-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body class="badge-light">
+    <h1 class="display-4">J.A.R.V.I.S interface</h1>
+
+    <form action="/" method="get">
+        <input type="text" id="queryBox" class="form-control w-25" name="q" placeholder="Say anything to J.A.R.V.I.S"
+            autocomplete="off">
+        <input type="submit" class="btn btn-outline-success" value="Submit">
+    </form>
+
+    <div class="lead mt-5">
+        <p class="text-capitalize text-dark">Quick Shortcuts</p>
+        <a href="/?q=https://www.google.com">Google</a>
+        <a href="/?q=https://www.reddit.com">Reddit</a>
+        <a href="/?q=https://www.youtube.com">Youtube</a>
+        <a href="/?q=https://twitch.tv">Twitch</a>
+        <a href="/?q=https://gmail.com">Gmail</a>
+    </div>
+</body>
+
+</html>
