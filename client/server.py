@@ -1,13 +1,12 @@
 from flask import Flask
 from flask import request
 import subprocess
-import importlib
 
 def readFile(fileName):
     return open(fileName, "r").read()
 
 # local imports
-exec(readFile("../compute.py"))
+exec(readFile("../compute.py")) # logical processor
 
 app = Flask(__name__)
 class ClientServer:

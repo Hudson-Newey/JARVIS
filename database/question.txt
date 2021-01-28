@@ -6,3 +6,7 @@ why
 how
 jarvis
 can
++
+-
+*
+/

@@ -1,6 +1,12 @@
 import os
 import urllib.parse
 
+# global static variables
+_CURR_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# local imports
+exec(open(_CURR_DIR + "\\mods\\loadModules.py", "r").read())
+
 class JARVIS:
     def compute(self, phrase):
         if ("://" in phrase):
@@ -11,13 +17,15 @@ class JARVIS:
             # encode URL into URI format
             phrase = urllib.parse.quote_plus(phrase)
             return "https://www.google.com/search?q=" + phrase
-        
+
         phraseEmotion = self.findPhraseEmotion(phrase)
+
+        # all modules must return phrase if no custom response can be given
+        phrase = conversationResponse(phrase, phraseEmotion)
+
         return phrase
-    
+
     def scanFileForPhrase(self, fileName, phrase):
-        _CURR_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-  
         # read the question file for keywords
         file1 = open(_CURR_DIR + fileName, 'r')
         Lines = file1.readlines()
