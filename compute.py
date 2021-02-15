@@ -12,6 +12,10 @@ class JARVIS:
         if ("://" in phrase):
             return phrase
         
+        # direct commands should be the first grants executed
+        if (self.isDirectCommand(phrase)):
+            return say(phrase)
+
         # we are just going to google questions for now.
         if (self.isQuestion(phrase) and not self.isPersonal(phrase)):
             # encode URL into URI format
@@ -54,3 +58,7 @@ class JARVIS:
     
     def isPersonal(self, phrase):
         return self.scanFileForPhrase("\\database\\personal.txt", phrase)
+    
+    def isDirectCommand(self, phrase):
+        if ("say" in phrase): return True
+        return False

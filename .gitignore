@@ -1,0 +1,7 @@
+restAPI.exe
+restAPI
+
+display-screen/node_modules/
+display-screen/npm-debug.log
+
+client/static/dist/

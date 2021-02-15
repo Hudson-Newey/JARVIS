@@ -29,6 +29,9 @@ def getRandomLine(fileName):
     return o
 
 # logical sub-functions
+def say(phrase):
+    return phrase[phrase.index("say") + 4::]
+
 def hey(phrase):
     return getRandomLine("\\database\\greetings.txt")
 
