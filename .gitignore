@@ -1,7 +1,15 @@
+.vscode/
+
 restAPI.exe
 restAPI
 
 display-screen/node_modules/
 display-screen/npm-debug.log
 
-client/static/dist/
+# may be reinstated once build file is complete
+# client/static/dist/
+
+# do not upload local data
+database/memory/*.xml
+database/memory/*.json
+database/memory/runtime_log.log

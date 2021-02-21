@@ -20,6 +20,8 @@ class ClientServer:
 
         # call restAPI
         jarvisComputeOBJ = JARVIS()
+
+        # call rest API
         subprocess.call(['../restAPI.exe', jarvisComputeOBJ.compute(query)])
         return readFile("static/index.html")
     

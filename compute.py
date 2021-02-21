@@ -19,6 +19,7 @@ class JARVIS:
         # we are just going to google questions for now.
         if (self.isQuestion(phrase) and not self.isPersonal(phrase)):
             # encode URL into URI format
+            print("query is question")
             phrase = urllib.parse.quote_plus(phrase)
             return "https://www.google.com/search?q=" + phrase
 

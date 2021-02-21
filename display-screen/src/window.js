@@ -18,8 +18,8 @@ let readSystemFile = (fileName) => {
 function main() {
   var mainWindow = new BrowserWindow({
     center: true,
-    // fullscreen: true, // uncomment for production
-    // alwaysOnTop: true, // uncomment for production
+    fullscreen: true, // uncomment for production
+    alwaysOnTop: true, // uncomment for production
     title: 'Screen Cast',
   });
   mainWindow.setMenu(null);
@@ -29,18 +29,31 @@ function main() {
   })
 
   expressApp.get('/', function (req, res) {
-    if (req.query.q != null && req.query.q != "") {
-      // load to a website
-      mainWindow.loadURL(req.query.q);
+    let requestQuery = req.query.q;
+
+    // display modes
+    console.log(requestQuery);
+    if (requestQuery == "load://watermark") {
+      mainWindow.loadFile(path.join(__dirname + '/static/index.html'));
+    } else if (requestQuery == "load://ambiant") {
+      mainWindow.loadFile(path.join(__dirname + '/static/ambiant.html'));
     } else {
-      // load homepage
-      res.sendFile(path.join(__dirname + '/index.html'));
+
+      // default http requests
+      if (req.query.q != null && req.query.q != "") {
+        // load to a website
+        mainWindow.loadURL(req.query.q);
+      } else {
+        // load homepage
+        res.sendFile(path.join(__dirname + '/static/index.html'));
+      }
+
     }
 
     // send response so http request gets resolved
-    res.sendFile(path.join(__dirname + '/index.html'));
+    res.sendFile(path.join(__dirname + '/static/index.html'));
   });
 }
 
 app.on('ready', main);
-expressApp.listen(port, () => console.log(`Screen Cast listening at http://localhost:${port}`))
+expressApp.listen(port, () => console.log(`JARVIS display screen listening at http://localhost:${port}`))
