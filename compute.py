@@ -5,7 +5,7 @@ import urllib.parse
 _CURR_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # local imports
-exec(open(_CURR_DIR + "\\mods\\loadModules.py", "r").read())
+exec(open(_CURR_DIR + "/mods/loadModules.py", "r").read())
 
 class JARVIS:
     def compute(self, phrase):

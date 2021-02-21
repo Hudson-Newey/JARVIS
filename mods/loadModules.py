@@ -5,4 +5,4 @@
 # 2. as the program gets bigger, there are expected to be A LOT of modules
 
 # local imports
-exec(open(_CURR_DIR + "\\mods\\conversational\\main.py", "r").read())
+exec(open(_CURR_DIR + "/mods/conversational/main.py", "r").read())
