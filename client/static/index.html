@@ -8,7 +8,6 @@
 
     <!--LOCAL STYLESHEETS/SCRIPTS-->
     <link rel="stylesheet" href="static/dist/style.css">
-    <script src="static/dist/script.js"></script>
 
     <!--CDN IMPORTS-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -32,17 +31,21 @@
         <a class="text-white font-weight-normal" href="/?q=https://www.youtube.com">Youtube</a>
         <a class="text-white font-weight-normal" href="/?q=https://twitch.tv">Twitch</a>
         <a class="text-white font-weight-normal" href="/?q=https://gmail.com">Gmail</a>
+        <a class="text-white font-weight-normal" href="/?q=https://www.qwant.com/music/">Music</a>
 
         <!--Mode Selection-->
         <div>
-            <select class="list-group badge-warning" id="mode-selection" onchange="changeMode(this.value);">
+            <select id="mode-selection" class="list-group badge-warning" onchange="changeMode(this.value);">
                 <option class="list-group-item" value="interaction">Interaction</option>
                 <option class="list-group-item" value="ambiant">Ambiant</option>
                 <option class="list-group-item" value="watermark">Watermark</option>
-                <option class="list-group-item" value="music">Music</option>
               </select>
         </div>
     </div>
 </body>
+
+<footer>
+    <script src="static/dist/script.js"></script>
+</footer>
 
 </html>

@@ -33,14 +33,14 @@ def say(phrase):
     return phrase[phrase.index("say") + 4::]
 
 def hey(phrase):
-    return getRandomLine("\\database\\greetings.txt")
+    return getRandomLine("/database/greetings.txt")
 
 def goodbye(phrase):
     return phrase
 
 # main calling function
 def conversationResponse(phrase, phraseEmotion):
-    if (scanFileForPhrase("\\database\\greetings.txt", phrase)):
+    if (scanFileForPhrase("/database/greetings.txt", phrase)):
         print("file contains a greeting")
         return hey(phrase)
 

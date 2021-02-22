@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<title>JARVIS</title>
@@ -10,15 +11,34 @@
 			width: 100%;
 			left: 0px;
 			top: 0px;
-			background-image: url('https://picsum.photos/1920/1080');
 			background-repeat: no-repeat;
 			background-size: cover;
+			background-color: black;
 		}
 	</style>
 </head>
 
 <body>
 	<div id="background" class="content">
-    </div>
+	</div>
 </body>
+
+<footer>
+	<script>
+		const cycleSleepTime = 9000; // (ms)
+		const backgroundImages = 20;
+		
+		let cycleIteration = 0;
+
+		// cycle throughout ambiant background images
+		let loop = () => {
+			document.getElementById("background").style.backgroundImage = "url('./ambiant-backgrounds/" + cycleIteration + ".jpg')";
+			
+			cycleIteration >= backgroundImages ? cycleIteration = 0 : cycleIteration++;
+			setTimeout(loop, cycleSleepTime);
+		}
+		loop();
+	</script>
+</footer>
+
 </html>
