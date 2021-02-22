@@ -18,11 +18,18 @@ class ClientServer:
         if (query == None):
             return readFile("static/index.html")
 
-        # call restAPI
+        # compute to output
         jarvisComputeOBJ = JARVIS()
+        (requestText, requestType) = jarvisComputeOBJ.compute(query)
 
-        # call rest API
-        subprocess.call(['../restAPI.exe', jarvisComputeOBJ.compute(query)])
+        # determain where the request should be sent
+        if (requestType == "restAPI"):
+            # call rest API
+            subprocess.call(['../restAPI.exe', requestText])
+
+        elif (requestType == "text"):
+            jarvisComputeOBJ.speakText(requestText)
+        
         return readFile("static/index.html")
     
     if __name__ == "__main__":

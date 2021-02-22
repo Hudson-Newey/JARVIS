@@ -6,3 +6,4 @@
 
 # local imports
 exec(open(_CURR_DIR + "/mods/conversational/main.py", "r").read())
+exec(open(_CURR_DIR + "/mods/conversational/speech.py", "r").read())

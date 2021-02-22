@@ -10,25 +10,29 @@ exec(open(_CURR_DIR + "/mods/loadModules.py", "r").read())
 class JARVIS:
     def compute(self, phrase):
         if ("://" in phrase):
-            return phrase
+            return (phrase, "restAPI")
         
         # direct commands should be the first grants executed
         if (self.isDirectCommand(phrase)):
-            return say(phrase)
+            return (say(phrase), "text")
 
         # we are just going to google questions for now.
         if (self.isQuestion(phrase) and not self.isPersonal(phrase)):
             # encode URL into URI format
             print("query is question")
             phrase = urllib.parse.quote_plus(phrase)
-            return "https://www.google.com/search?q=" + phrase
+            return ("https://www.google.com/search?q=" + phrase, "restAPI")
 
         phraseEmotion = self.findPhraseEmotion(phrase)
 
         # all modules must return phrase if no custom response can be given
         phrase = conversationResponse(phrase, phraseEmotion)
 
-        return phrase
+        return (phrase, "text")
+    
+    def speakText(self, text):
+        speechEngineOBJ = speechEngine()
+        speechEngineOBJ.sayText(text)
 
     def scanFileForPhrase(self, fileName, phrase):
         # read the question file for keywords

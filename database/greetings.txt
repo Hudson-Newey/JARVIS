@@ -5,6 +5,5 @@ hello
 good day
 howdy
 welcome
-hi-ya
 good morning
 sup

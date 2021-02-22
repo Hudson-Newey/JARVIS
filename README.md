@@ -11,3 +11,14 @@ database/ - contains all of the keywords and their associated values
 client - a simple user interface to
 display - screen - a simple TV display screen
 sound-speak - responsible for handling speech, music, sound effects, etc.
+
+---
+**_To Run_**
+
+window 1  
+> `cd ./client/`  
+> `python3 ./server.py`
+
+window 2  
+> `cd ./display-screen/`  
+> `npm start`
