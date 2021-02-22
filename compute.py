@@ -53,16 +53,16 @@ class JARVIS:
   
         # read keyword files one by one
         for i in range(len(toScan)):
-            if (self.scanFileForPhrase("\\database\\" + toScan[i], phrase)):
+            if (self.scanFileForPhrase("/database/" + toScan[i], phrase)):
                 emotion = toScan[i][:-4:]
 
         return emotion
     
     def isQuestion(self, phrase):
-        return self.scanFileForPhrase("\\database\\question.txt", phrase)
+        return self.scanFileForPhrase("/database/question.txt", phrase)
     
     def isPersonal(self, phrase):
-        return self.scanFileForPhrase("\\database\\personal.txt", phrase)
+        return self.scanFileForPhrase("/database/personal.txt", phrase)
     
     def isDirectCommand(self, phrase):
         if ("say" in phrase): return True
